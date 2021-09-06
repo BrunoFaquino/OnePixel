@@ -177,6 +177,12 @@ public class telaInicial extends JFrame implements MouseListener, KeyListener {
 	// Aumenta os botões quando o mouse estiver em cima
 	@Override
 	public void mouseEntered(MouseEvent e) {
+		try {
+			audio("BtnHoverSong", 10, 0, 0);
+		} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		if (e.getSource() == iniciarNoSelected) {
 			iniciarNoSelected.setVisible(false);
 			iniciarSelected.setVisible(true);
