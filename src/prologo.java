@@ -15,7 +15,7 @@ public class prologo extends JFrame {
 	private JPanel[] panel = new JPanel[11];
 	private JLabel[] tela = new JLabel[11];
 	private String[] Dialogo = {"OI GENTE, ISSO É UM TESTE"};
-	private JLabel texto;
+	private JLabel[] texto = new JLabel[Dialogo.length];
 	private String palavra = "";
 	private int contTela0 = 0;
 	
@@ -32,10 +32,12 @@ public class prologo extends JFrame {
 		setUndecorated(true); // Desativa a Decoração
 		setLocationRelativeTo(null); // Tela Centralizada
 		
-		texto = new JLabel("asdasdsad");
-		texto.setForeground(Color.WHITE);
-		texto.setFont(new Font("Pixel Operator 8", Font.PLAIN, 12));
-		texto.setBounds(50, 200, 500, 100);
+		for(int i = 0; i < texto.length; i++) {
+			texto[i] = new JLabel(Dialogo[i]);
+			texto[i].setForeground(Color.WHITE);
+			texto[i].setFont(new Font("Pixel Operator 8", Font.PLAIN, 12));
+			texto[i].setBounds(50, 200, 500, 100);
+		}
 		
 		for (int i = 0; i < 11;i++) {
 			panel[i] = new JPanel(null);
@@ -47,7 +49,7 @@ public class prologo extends JFrame {
 			tela[i].setBounds(0,0,600,310);
 		}
 		
-		panel[1].add(texto);
+		panel[1].add(texto[0]);
 		
 		
 		/*Panel 0 | TELA 0 | GIF | Duração de 3 segundos  */
@@ -137,7 +139,7 @@ public class prologo extends JFrame {
         				add(panel[1]);
         				panel[1].setVisible(true);
         				for (int z = 0; z < Dialogo[0].length(); z++) {
-        					TextEffect(Dialogo, texto, z);
+        					TextEffect(Dialogo[0], texto[0], z);
         				}
         				break;
         				
@@ -150,9 +152,9 @@ public class prologo extends JFrame {
         }
 	}
 	
-	public void TextEffect (String DialogoBox[], JLabel lbDialogo, int z) {
+	public void TextEffect (String DialogoBox, JLabel lbDialogo, int z) {
 		try {
-			char letra = DialogoBox[0].charAt(z);
+			char letra = DialogoBox.charAt(z);
 			palavra = palavra + letra;
 			lbDialogo.setText(palavra);
 			Thread.sleep(200);
