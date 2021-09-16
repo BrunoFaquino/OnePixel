@@ -1,11 +1,9 @@
 package com.kaua.windows.panels;
 
 import javax.swing.JPanel;
-import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -15,12 +13,14 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 
 public class InicialScreen extends JPanel implements MouseListener, KeyListener {
-
+	private static final long serialVersionUID = 1L;
+	
+	
 	private JLabel fundoLogo;
 	private JButton iniciarNoSelected, fecharNoSelected, iniciarSelected, fecharSelected;
 	private Clip SoundTrack1;
 
-	public InicialScreen() {
+	public InicialScreen() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		init();
 	}
 
@@ -131,7 +131,6 @@ public class InicialScreen extends JPanel implements MouseListener, KeyListener 
 			}
 		});
 	}
-
 	public void audio(String nome, float volume, int loop, int action)
 			throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
