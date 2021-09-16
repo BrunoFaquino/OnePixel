@@ -1,5 +1,4 @@
 package com.kaua.windows.panels;
-
 import javax.swing.JPanel;
 import java.awt.event.*;
 import java.io.File;
@@ -14,7 +13,6 @@ import javax.swing.*;
 
 public class InicialScreen extends JPanel implements MouseListener, KeyListener {
 	private static final long serialVersionUID = 1L;
-	
 	
 	private JLabel fundoLogo;
 	private JButton iniciarNoSelected, fecharNoSelected, iniciarSelected, fecharSelected;
@@ -32,12 +30,12 @@ public class InicialScreen extends JPanel implements MouseListener, KeyListener 
 
 		DefineButtons();
 
-		try {
+		/*try {
 			SoundTrackInitialScreen();
 			
 		} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
 			System.out.printf("Error while playing sound At initial Screen: ", e);
-		}
+		}*/
 		
 		Eventos();
 		
@@ -112,7 +110,8 @@ public class InicialScreen extends JPanel implements MouseListener, KeyListener 
 
 		iniciarSelected.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
+				
+				/*try {
 					audio("Selected Sound1", 25, 0, 0);
 					SoundTrack1.stop();
 					PrologueScreen prologo = new PrologueScreen();
@@ -127,7 +126,8 @@ public class InicialScreen extends JPanel implements MouseListener, KeyListener 
 				} catch (LineUnavailableException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}
+				}*/
+				
 			}
 		});
 	}
